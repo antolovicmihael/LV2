@@ -5,10 +5,14 @@ namespace LV2
     class Die
     {
         private int sidesCount;
-        private Random random;
-        public Die(int sidesCount)     {
-            this.sidesCount= sidesCount;
-            random = new Random();
+        private static Random random = new Random();
+        public Die(int sidesCount)
+        {
+            this.sidesCount = sidesCount;
+        }
+        public static int RandomGenerate()
+        {
+            return random.Next(32);
         }
         public int Roll(int sidesCount)
         {
